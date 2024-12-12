@@ -2,7 +2,7 @@ import pytest
 import os
 from PIL import Image
 import tkinter as tk
-from main import ImageReductionApp  # Ensure this matches your main script name
+from main import ImageReductionApp 
 
 @pytest.fixture
 def sample_image():
