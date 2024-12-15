@@ -93,14 +93,18 @@ class ImageReductionApp:
 
         file_path = filedialog.asksaveasfilename(
             defaultextension = ".jpg",
-            filetypes = [("JPEG", "*.jpg"), ("PNG", "*.png"), ("BMP", "*.bmp")]
+            filetypes = [("JPEG", "*.jpg"), ("PNG", "*.png"), ("BMP", "*.bmp")],
+            title = "Save Processed Image"
         )
-        if file_path:
-            try:
-                self.processed_image.save(file_path)
-                messagebox.showinfo("Success", f"Image saved to {file_path}")
-            except Exception as e:
-                messagebox.showerror("Error", f"Could not save image: {str(e)}")
+        if not file_path:
+            return
+        try:
+            self.processed_image.save(file_path)
+            messagebox.showinfo("Success", f"Image saved to {os.path.basename(file_path)}")
+        except PermissionError:
+            messagebox.showerror("Error", "Permission denied. Choose a different location.")
+        except Exception as e:
+            messagebox.showerror("Error", f"Could not save image: {e}")
 
 def main():
     root = tk.Tk()
