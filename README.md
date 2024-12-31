@@ -9,6 +9,13 @@ A GUI application for interactive image resizing with multiple interpolation met
   <img src = "main-2.png" alt = "main_screen2">
 </div>
 
+<div align = "center">
+  <img src = "improved_main-1.png" alt = "improved_main-1">
+</div>
+
+<div align = "center">
+  <img src = "improved_main-2.png" alt = "improved_main-2">
+</div>
 
 
 
